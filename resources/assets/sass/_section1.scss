@@ -1,0 +1,81 @@
+#section1 {
+    background-color: #f5f5f5;
+}
+
+.container {
+    text-align: center;
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+
+    #row1 {
+        padding-top: 100px;
+
+        #titrepure {
+            margin: auto;
+
+            #titreagencepure {
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+            }
+
+            #span1 {
+                background: none repeat scroll 0 0 #999999;
+                display: block;
+                height: 2px;
+                margin: 0 auto;
+                width: 130px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+p {
+    color: #999999;
+    font-size: 90%;
+}
+
+#screens {
+    position: relative;
+
+    .small-screen-left {
+        height: auto;
+        position: absolute;
+        z-index: 0;
+        top: 100px;
+        left: 0;
+
+        #img1 {
+            padding-right: 0px;
+            position: relative;
+            width: 300px;
+        }
+    }
+
+    .small-screen-right {
+        height: auto;
+        position: absolute;
+        z-index: 0;
+        top: 100px;
+        right: 0;
+
+        #img2 {
+            padding-right: 0px;
+            position: relative;
+            width: 300px;
+        }
+    }
+
+    .big-screen {
+        height: auto;
+        margin: 0 auto;
+        z-index: 100;
+
+        #img3 {
+            position: relative;
+            padding-left: 0px;
+            width: 600px;
+        }
+    }
+}

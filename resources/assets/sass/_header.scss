@@ -1,0 +1,61 @@
+* {
+    margin: 0%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#début {
+    background-image: url(http://clapat.ro/themes/newave-wordpress/wp-content/themes/newave-theme/images/home_pattern.png);
+    padding-top: 60px;
+    width: 100%;
+    height: 650px;
+    margin: auto;
+
+    #insidedebut {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+
+        #logopure {
+            padding-bottom: 150px;
+            justify-content: center;
+            padding: 0%;
+        }
+
+        .studio {
+            display: inline;
+            padding: 0%;
+        }
+
+        .studio-1 {
+            color: $colorred;
+            list-style: none;
+            text-justify: auto;
+            font-size: 400%;
+            font-family: $fontfamily;
+        }
+
+        .agence {
+            color: grey;
+            margin-top: 0px;
+        }
+
+        .A {
+            margin: auto !important;
+            margin-top: 30px;
+            text-decoration-line: none;
+            color: $colorwhite;
+            border: $colorwhite;
+            border-radius: 5px;
+            padding: 8px;
+            font-family: $fontfamily;
+        }
+
+        .A:hover {
+            color: black;
+            background-color: white;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+nav {
+    box-shadow: -2px 3px 4px 0px #8e737326;
+    padding-bottom: 2px;
+    position: relative;
+
+    #nav {
+        display: flex;
+        margin-left: 130px;
+        margin-right: 100px;
+
+        #navi {
+            display: inline-block;
+            flex: 1;
+            padding-top: 15px;
+
+            a {
+                text-decoration-line: none;
+                color: rgb(181, 174, 174);
+                font-family: $fontfamily;
+            }
+
+            a:hover {
+                color: black;
+                text-decoration-line: none;
+                font-family: $fontfamily;
+            }
+        }
+
+        .nav-logo {
+            padding-top: 0 !important;
+
+            .logonav {
+                background-color: rgb(31, 29, 29);
+                width: 6%;
+                position: absolute;
+            }
+        }
+    }
+}

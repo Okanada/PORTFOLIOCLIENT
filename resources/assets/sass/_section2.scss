@@ -1,0 +1,47 @@
+#titre2 {
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+  
+  .photoéquipe {
+    width: 100%;
+  }
+
+  #bgpetit {
+    background-image: url(../img/photo-pure-2018.jpg);
+    background-size: 100%;
+    transform: scale(1);
+    position: relative;
+  }
+  
+  .filtre {
+    background-color: #000000c1;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  #containerbgpetit {
+    padding: 40px 20px;
+  }
+  
+  #h1bg {
+    padding-top: 100px;
+    font-size: 180%;
+    letter-spacing: 3px;
+    font-family: 'Ubuntu', sans-serif;
+    text-justify: auto;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #parabg {
+    color: #a79b9b;
+    position: relative;
+    z-index: 1;
+    padding-top: 30px;
+  }
