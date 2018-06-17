@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Admin edit')
 @section('content_header')
-    <h1> Éditer un Post</h1>
+    <h1> Éditer un Article</h1>
 @stop
 @section('content')
 <form method="post" action="{{route('post.update',['post'=>$post->id])}}"  enctype="multipart/form-data">
@@ -22,6 +22,7 @@
            @endif
         <textarea class="form-control" name="contenu" id="contenu"rows="6" placeholder="mon nouveau contenu" >{{old('contenu',$post->contenu)}} </textarea>
     </div>
+
      {{-- Label et input de l'image + message d'erreur juste au-dessus --}}
 
 

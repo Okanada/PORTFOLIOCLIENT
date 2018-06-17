@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePost;
+use App\Policies\PostPolicy;
 
 class PostController extends Controller
 {

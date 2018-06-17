@@ -6,6 +6,8 @@ use App\User;
 use App\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+
+
 class PostPolicy
 {
     use HandlesAuthorization;
@@ -17,6 +19,17 @@ class PostPolicy
      * @param  \App\Post  $post
      * @return mixed
      */
+
+     public function before($user, $ability)
+    {
+        
+        return $user->isAdmin();    
+          
+
+    }
+
+
+
     public function view(User $user, Post $post)
     {
         //
@@ -42,7 +55,7 @@ class PostPolicy
      */
     public function update(User $user, Post $post)
     {
-        //
+        return $user->id === $post->user_id;
     }
 
     /**
@@ -54,6 +67,6 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-        //
+        return $user->id === $post->user_id;
     }
 }

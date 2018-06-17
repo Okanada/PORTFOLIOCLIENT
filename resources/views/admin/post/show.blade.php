@@ -23,13 +23,14 @@
    <div class="col-4">
        <div class="box">
            <div class="box-body">
-               {{-- @can('update',$post) --}}
+               {{--@can('update',$post)--}} 
                <a href="{{route('post.edit',['post'=>$post->id])}}" class="btn btn-warning">edit</a>
-               {{-- @endcan --}}
+               {{-- @endcan --}} 
+
 
                @csrf
                @method('DELETE')
-               {{-- @can('delete',$post) --}}
+                {{-- @can('delete',$post) --}}
                <form class="d-inline" action="{{route('post.destroy',['post'=>$post->id])}}" method="POST">
                <button type="submit" class="btn btn-danger">delete</button>
                {{-- @endcan --}}
