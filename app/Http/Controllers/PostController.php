@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePost;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        Post::all();
+        $posts=Post::all();
         return  view('admin.post.index',compact('posts'));
     }
 
@@ -25,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return  view ('admin.post.create');
     }
 
     /**
@@ -36,7 +37,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validated();
+
+        $post = new Post;
+        $post->titre = $request->titre;
+        $post->contenu = $request->contenu;
+        $post->user_id = $request->user_id;
+
+
+        // Redimensionnement de l'image 
+
+        //$post->image =  App::make('ImageResize')->imageStore($request->image);
+
+        // Redimmensionnement de l'image
+
+
+        $post->save();
+        return redirect()->route('post.index');
     }
 
     /**
@@ -47,7 +64,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view ('admin.post.show', compact('post'));
     }
 
     /**
@@ -58,7 +75,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $this->authorize('update', $post);
+        return  view ('admin.post.edit', compact('post'));
     }
 
     /**
@@ -70,7 +88,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $this->authorize('update', $post);
+
+        $request->validated();
+
+    $post->titre = $request->titre;
+        $post->contenu = $request->contenu;
+        $post->save();
+        return redirect()->route('post.index');
     }
 
     /**

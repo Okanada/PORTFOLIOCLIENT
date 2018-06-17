@@ -3,7 +3,7 @@
         <div>
             <div id="début">
                 <center id="insidedebut">
-                    <img src="../public/img/logo-pure-2018.png" alt="" id="logopure">
+                    <img src="../img/logo-pure-2018.png" alt="" id="logopure">
 
                     <ul class="studio">
                         <li class="studio-1"> STUDIO WEB</li>
@@ -38,7 +38,7 @@
                 </li>
                 <li id="navi" class="nav-logo">
                     <a href="">
-                        <img src="../public/img/logo-pure-menu-2018.png" alt="" class="logonav">
+                        <img src="../img/logo-pure-menu-2018.png" alt="" class="logonav">
                     </a>
                 </li>
                 <li id="navi">

@@ -115,11 +115,10 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Posts',
+            'url'         => 'admin/post',
             'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
+           
         ],
         'ACCOUNT SETTINGS',
         [
