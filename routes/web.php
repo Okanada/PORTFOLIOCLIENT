@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@index')->name('main');
+Route::post('/contact', 'PageController@contact')->name('sendMail');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/admin/post', 'PostController')->middleware('Salut');
+

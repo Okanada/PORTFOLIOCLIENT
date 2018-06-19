@@ -8,6 +8,8 @@ use App\Http\Requests\StorePost;
 use Storage;
 use  Intervention\Image\ImageManagerStatic as  Image;
 use App;
+use Mail;
+
 
 
 class PostController extends Controller
@@ -107,8 +109,6 @@ class PostController extends Controller
                  $post->image = App::make('ImageResize')->imageStore($request->image);
         
             }
-        
-
 
             $post->titre = $request->titre;
             $post->contenu = $request->contenu;
@@ -123,6 +123,7 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(Post $post)
     {
 
