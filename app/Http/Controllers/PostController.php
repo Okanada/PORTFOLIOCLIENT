@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePost;
-use App\Policies\PostPolicy;
+use Storage;
+use  Intervention\Image\ImageManagerStatic as  Image;
+use App;
+
 
 class PostController extends Controller
 {
@@ -17,6 +20,7 @@ class PostController extends Controller
     public function index()
     {
         $posts=Post::all();
+        //$post->image =  App::make('ImageResize')->imageStore($request->image);
         return  view('admin.post.index',compact('posts'));
     }
 
@@ -36,7 +40,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePost $request)
     {
          $request->validated();
 
@@ -44,12 +48,11 @@ class PostController extends Controller
         $post->titre = $request->titre;
         $post->contenu = $request->contenu;
         $post->user_id = $request->user_id;
+        $post->image = $request->image->store('','imagePost');
 
 
         // Redimensionnement de l'image 
-
-        //$post->image =  App::make('ImageResize')->imageStore($request->image);
-
+        $post->image =  App::make('ImageResize')->imageStore($request->image);
         // Redimmensionnement de l'image
 
 
@@ -76,7 +79,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $this->authorize('update', $post);
+        
         return  view ('admin.post.edit', compact('post'));
     }
 
@@ -87,16 +90,31 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+
+
+    public function update(StorePost $request, Post $post)
+    
     {
-        $this->authorize('update', $post);
+           $request->validated();
 
-        $request->validated();
 
-    $post->titre = $request->titre;
-        $post->contenu = $request->contenu;
-        $post->save();
-        return redirect()->route('post.index');
+             //    Remplacement d'une image par une autre tout en supprimant l'ancienne du storage
+             if($request->image != null){ 
+
+                // Suppression de l'image redimmensionné 
+                 $post->image = App::make('ImageResize')->imageDelete($post->image);
+                //  Redimmensionnement de l'image
+                 $post->image = App::make('ImageResize')->imageStore($request->image);
+        
+            }
+        
+
+
+            $post->titre = $request->titre;
+            $post->contenu = $request->contenu;
+            $post->image = $request->image->store('','imagePost');
+            $post->save();
+            return redirect()->route('post.index');
     }
 
     /**
@@ -107,6 +125,15 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+
+
+        Storage::disk('imagePost')->delete($post->image);
+        Storage::disk('imagePostResize')->delete($post->image);
+        $post->delete();
+        return redirect()->route('post.index');
+
+
     }
+
+    
 }

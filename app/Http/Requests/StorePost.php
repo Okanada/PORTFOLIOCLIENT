@@ -26,7 +26,7 @@ class StorePost extends FormRequest
        return [
              'titre' => 'required|max:255',
         'contenu' => 'required',
-        'user_id' => 'required|numeric',
+        //'user_id' => 'required|numeric',
         "image"=> "image|max:400000|mimes:jpeg,bmp,png,jpg"
         ];
     }

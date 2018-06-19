@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Admin edit')
 @section('content_header')
-    <h1>Création d'un post</h1>
+    <h1>Création d'un Projet</h1>
 @stop
 @section('content')
 <form method="post" action="{{route('post.store')}}"  enctype="multipart/form-data">
@@ -24,7 +24,7 @@
     </div>
 
     {{-- Label et input de l'image + message d'erreur juste au-dessus --}}
-   {{--  @if($errors->has('image'))
+     @if($errors->has('image'))
          <div class="text-danger">Fichier trop volumineux</div>
     @endif
     <div class="form-group">
@@ -33,10 +33,10 @@
                 <input type="file" class="custom-file-input" id="image" name="image">
                 <label class="custom-file-label" for="image">choisissez une image</label>
              </div>
-     </div> --}}
+     </div> 
 
      {{-- Bouton Créer --}}
-    <button type="submit">Créer</button>
+    <button type="submit" class="btn btn-dark">Créer</button>
 </form>
 @stop
 

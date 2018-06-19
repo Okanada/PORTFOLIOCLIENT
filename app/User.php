@@ -32,6 +32,10 @@ class User extends Authenticatable
         return $this ->hasMany('App\Post','user_id', 'id');
     }
 
+    public function role(){
+        return $this ->belongsTo('App\Role', 'role_id', 'id');
+    }
+
      public function isAdmin(){
           return Auth::user()->role->slug == 'admin';
     }

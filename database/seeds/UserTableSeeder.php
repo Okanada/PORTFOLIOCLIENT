@@ -15,6 +15,7 @@ class UserTableSeeder extends Seeder
         'name' => 'Okan',
         'email' => 'guidegalactique@gmail.com',
         'password' => bcrypt('kingdomhearts'),
+        'role_id' => 1,
 ]);
 
         factory(App\User::class, 1) ->create()

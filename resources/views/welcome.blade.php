@@ -20,7 +20,7 @@
     <!-- Début de section 1 -->
 @section('content')
     <section id="section1">
-        <div class="container">
+       <div class="container">
             <!-- titre de la section 1 -->
             <div class="row" id="row1">
                 <div class="col-8" id="titrepure">
@@ -136,10 +136,10 @@
 
                 <div class="col-11">
                     <div class="pl-5">
-                        <h5 id="titrecompétence">
+                        <h5 class="pl-5" id="titrecompétence">
                             CONSEIL ET STRATÉGIE
                         </h5>
-                        <p id="paracompétence">
+                        <p class="pl-5" id="paracompétence">
                             Grâce à nos compétences internes c’est avec cohérence, que nous vous proposons des plans d’actions stratégiques en rapport
                             avec vos besoins. D’une stratégie de communication opérationnelle, à la campagne de lancement
                             de votre nouveau produit, en passant par la mise en place d’une stratégie de web marketing, c’est
@@ -164,10 +164,10 @@
 
                 <div class="col-11">
                     <div class="pl-5">
-                        <h5 id="titrecompétence">
+                        <h5 class="pl-5" id="titrecompétence">
                             ÉVENEMENTIEL
                         </h5>
-                        <p id="paracompétence">
+                        <p class="pl-5" id="paracompétence">
                             De par notre ancienneté, et notre réseau relationnel nous sommes secondés par des partenaires techniques qui nous autorisent
                             à pouvoir concrétiser toutes sortes de réalisations, adaptées à votre budget et à la nature de
                             votre évènement. Soirées ou journées portes ouvertes, inauguration de produits, soirées institutionnelles,
@@ -192,10 +192,10 @@
 
                 <div class="col-11">
                     <div class="pl-5">
-                        <h5 id="titrecompétence">
+                        <h5 class="pl-5" id="titrecompétence">
                             WEB
                         </h5>
-                        <p id="paracompétence">
+                        <p class="pl-5" id="paracompétence">
                             Toutes les solutions sont permises pour communiquer sur votre e-notoriété. Notre studio web se charge de mettre en place
                             un développement sur mesure pour vos e-projets. Grâce à nos compétences internes, nous vous proposons
                             des sites vitrines administrables, des solutions e-commerce, des applications smartphones, le
@@ -220,10 +220,10 @@
 
                 <div class="col-11">
                     <div class="pl-5">
-                        <h5 id="titrecompétence">
+                        <h5 class="pl-5" id="titrecompétence">
                             3D ET PRINT
                         </h5>
-                        <p id="paracompétence">
+                        <p class="pl-5" id="paracompétence">
                             Chez Pure la 3D et le print ce n’est pas que des images, ou des créations graphiques, c’est aussi un panel d’applications
                             dédiées aux smartphones, ou tablettes numériques. Avec notre studio 3D-Print, nous vous proposons
                             une valeur ajoutée grâce à une utilisation très simple de la 3D temps réel, ou de la réalité

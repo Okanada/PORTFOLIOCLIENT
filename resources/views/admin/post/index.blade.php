@@ -1,7 +1,7 @@
 
-@extends('adminlte::page')
+@extends('adminlte::page') 
 
-@section('title', 'Admin post')
+@section('title', 'Admin post') 
 
 
 @section('content_header')
@@ -18,136 +18,36 @@
 
 
 <div class="row pt-5">
-   <div class="col-6">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../img/Capture du 2018-05-08 09-51-01.png" alt="Card image cap">
-        <div class="card-body">
-            <table class="table">
-        <thead>
-            <tr>
-                <th>titre</th>
-                <th>Auteur</th>
-                <th>Contenu</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($posts as $element)
-            <tr>    
-                <td>{{$element->titre}}</td>
-                <td>{{$element->user->name}}</td>
-                <td>{{$element->contenu}}</td>   
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-            <a class="btn btn-primary" href="{{route('post.show',['post'=>$element->id])}}">show</a>
-        </div>
-      </div>
-   </div>
-
-
-
-
-
-   <div class="col-6">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../img/Capture du 2018-05-08 09-53-28.png" alt="Card image cap">
-        <div class="card-body">
-           <table class="table">
-        <thead>
-            <tr>
-                <th>titre</th>
-                <th>Auteur</th>
-                <th>Contenu</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($posts as $element)
-            <tr>    
-                <td>{{$element->titre}}</td>
-                <td>{{$element->user->name}}</td>
-                 <td>{{$element->contenu}}</td>   
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-            <a class="btn btn-primary" href="{{route('post.show',['post'=>$element->id])}}">show</a>
-        </div>
-      </div>
-   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row pt-5">
-    <div class="col-6">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../img/Capture du 2018-05-08 09-56-14.png" alt="Card image cap">
-        <div class="card-body">
-           <table class="table">
-        <thead>
-            <tr>
-                <th>titre</th>
-                <th>Auteur</th>
-                <th>Contenu</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($posts as $element)
-            <tr>    
-                <td>{{$element->titre}}</td>
-                <td>{{$element->user->name}}</td>
-                 <td>{{$element->contenu}}</td>   
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-            <a class="btn btn-primary" href="{{route('post.show',['post'=>$element->id])}}">show</a>
-        </div>
-      </div>
-   </div>
+ 
+@foreach($posts as $element)
    
-
-
-
-
-   <div class="col-6">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../img/Capture du 2018-05-08 09-58-36.png" alt="Card image cap">
-        <div class="card-body">    
-          <table class="table">
-        <thead>
+      <div class="card col-4 m-4 bg-secondary" style="width: 9rem;" >
+        <img class="card-img-top rounded" src="../img/equipo-trabajo-ideal-consiguelo-gastrocoaching.jpg" alt="Card image cap">
+        <div class="card-body">
+           <table class="table table-dark">
+        <thead class="thead-dark">
             <tr>
-                <th>titre</th>
                 <th>Auteur</th>
+                <th>titre</th>
                 <th>Contenu</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($posts as $element)
+            
             <tr>    
-                <td>{{$element->titre}}</td>
                 <td>{{$element->user->name}}</td>
+                <td>{{$element->titre}}</td>
                  <td>{{$element->contenu}}</td>   
             </tr>
-            @endforeach
+            
         </tbody>
-    </table>
+          </table>
             <a class="btn btn-primary" href="{{route('post.show',['post'=>$element->id])}}">show</a>
         </div>
       </div>
-   </div>
+   
+   @endforeach
 </div>
 @stop
+
+

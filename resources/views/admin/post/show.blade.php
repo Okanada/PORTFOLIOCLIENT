@@ -13,10 +13,12 @@
            <div class="box-header">
                <h1>{{$post->titre}}</h1>
            </div>
+
            <div class="box-body">
                {{-- Appel de imagePost du storage pour aller chercher l'image via la $table->image du fichier de migration --}}
-              {{-- <p><img class="img-fluid" src="{{Storage::disk('imagePostResize')->url($post->image)}}" alt=""></p> --}}
+               <p><img class="img-fluid rounded" src="{{Storage::disk('imagePostResize')->url($post->image)}}" alt=""></p>
                <p>{{$post->contenu}}</p>
+
            </div>
        </div>
    </div>
@@ -28,13 +30,13 @@
                {{-- @endcan --}} 
 
 
-               @csrf
-               @method('DELETE')
-                {{-- @can('delete',$post) --}}
+               {{-- @can('delete',$post) --}}
                <form class="d-inline" action="{{route('post.destroy',['post'=>$post->id])}}" method="POST">
-               <button type="submit" class="btn btn-danger">delete</button>
+                    @csrf
+                    @method('DELETE')
+               <button type="submit" class="btn btn-danger">Supprimer</button>
                {{-- @endcan --}}
-            </form>
+               </form>
                
            </div>
        </div>
