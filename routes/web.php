@@ -11,11 +11,16 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', 'PageController@index')->name('main');
 Route::post('/contact', 'PageController@contact')->name('sendMail');
-Route::get('/galerie', 'PageController@galeria')->name('Galeria');
 
-Auth::routes();
+
+Route::get('/galerie', 'PageController@galeria')->name('Galeria');
+Route::get('/galerie/{post}', 'PageController@galeriashow')->name('GaleriaShow');
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

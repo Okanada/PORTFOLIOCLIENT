@@ -384,8 +384,7 @@
             </div>
 
             <div>
-                <form class="d-inline" action="{{route('Galeria')}}" method="POST">
-               <button type="submit" class="btn btn-danger">Galerie de projets</button>
+                <a name="" id="" class="btn btn-primary" href="{{route('Galeria')}}" role="button">Galerie</a>
             </div>
 
         

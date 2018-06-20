@@ -1,15 +1,6 @@
-@section('content_header')
-    <h1>Mes Projets</h1>
-@stop
-
+@extends('layouts.front')
 
 @section('content')
-
-
-<div><a href="{{route('post.create')}}" class="btn btn-success">Ajouter un Projet</a></div>
-
-
-
 
 <div class="row pt-5">
  
@@ -43,7 +34,7 @@
 
 
 
-            <a class="btn btn-primary" href="{{route('post.show',['post'=>$element->id])}}">show</a>
+            <a class="btn btn-primary" href="{{route('GaleriaShow', ['post'=>$element->id])}}">show</a>
         </div>
       </div>
    
