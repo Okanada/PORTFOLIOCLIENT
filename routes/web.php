@@ -13,6 +13,7 @@
 
 Route::get('/', 'PageController@index')->name('main');
 Route::post('/contact', 'PageController@contact')->name('sendMail');
+Route::get('/galerie', 'PageController@galeria')->name('Galeria');
 
 Auth::routes();
 

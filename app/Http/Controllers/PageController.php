@@ -13,6 +13,13 @@ class PageController extends Controller
     }
 
 
+    public function galeria(){
+
+        $posts=Post::all();
+        return  view('front.galerie',compact('posts'));
+    }
+
+
 
 
   public function contact( Request $request) {

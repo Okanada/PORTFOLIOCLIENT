@@ -347,7 +347,7 @@
             <!-- Début titre section 6 -->
 
 
-            <div class="row">
+            <div class="row pb-5">
                 <div class="col-7">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -381,10 +381,14 @@
                     </div>
                 </div>
                 <img src='{{asset("img/trait_separation_by_lubianse-d4ansye.png")}}' alt="">
-                <div class="col-5">
-
-                </div>
             </div>
+
+            <div>
+                <form class="d-inline" action="{{route('Galeria')}}" method="POST">
+               <button type="submit" class="btn btn-danger">Galerie de projets</button>
+            </div>
+
+        
         </div>
 
     </section>
