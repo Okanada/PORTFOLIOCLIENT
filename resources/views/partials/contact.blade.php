@@ -8,6 +8,7 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="well well-sm">
           <form class="form-horizontal" action="{{route('sendMail')}}" method="post">
+            @csrf
           <fieldset>
             <legend class="text-center">Contact us</legend>
     

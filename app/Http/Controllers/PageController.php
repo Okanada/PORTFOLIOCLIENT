@@ -31,9 +31,6 @@ class PageController extends Controller
 
 
 
-
-
-
   public function contact( Request $request) {
 
     event(new Contact($request));
